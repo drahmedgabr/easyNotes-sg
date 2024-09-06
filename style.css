@@ -53,6 +53,7 @@ h1 i {
     font-size: 60px;
     color: var(--mainColor);
     transition: 0.5s;
+    z-index: 1;
 }
 
 #addButton:hover {
