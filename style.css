@@ -75,6 +75,7 @@ h1 i {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
 }
 
 #zeroNotes img {
@@ -94,4 +95,23 @@ textarea {
     font-size: 25px;
     padding: 10px;
     outline-color: var(--mainColor);
+}
+
+#notesDiv div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #DDDFF5;
+    border-bottom: 2px solid #4855CD;
+}
+
+#notesDiv div p {
+    font-size: 25px;
+    margin: 0;
+}
+
+#notesDiv div i {
+    font-size: 35px;
+    margin-left: 20px;
 }
