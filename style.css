@@ -1,11 +1,11 @@
-html {
-    --mainColor: #4855CD;
-    --secondaryColor: #2a3490;
-}
-
 * {
     margin: 0;
     box-sizing: border-box;
+}
+
+html {
+    --mainColor: #4855CD;
+    --secondaryColor: #2a3490;
 }
 
 h1 {
@@ -97,21 +97,25 @@ textarea {
     outline-color: var(--mainColor);
 }
 
+#notesDiv {
+    margin-bottom: 18vh;
+}
+
 #notesDiv div {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 20px;
+    font-size: 25px;
     background-color: #DDDFF5;
     border-bottom: 2px solid #4855CD;
+    align-items: center;
 }
 
 #notesDiv div p {
-    font-size: 25px;
     margin: 0;
+    margin-right: 20px;
 }
 
 #notesDiv div i {
     font-size: 35px;
-    margin-left: 20px;
 }
