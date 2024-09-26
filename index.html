@@ -22,10 +22,10 @@
     </h1>
 
     <div id="bottomDiv">
-        <div id="homeDiv">
+        <div id="homeDiv" onclick="showHome()">
             <i class="bi bi-house-door-fill"></i>
         </div>
-        <div id="accountDiv">
+        <div id="accountDiv" onclick="showOptions()">
             <i class="bi bi-person-fill"></i>
         </div>
     </div>
@@ -70,6 +70,40 @@
 
     
   </div>
+
+  <!-- Start Options Div -->
+
+  <div id="optionsDiv">
+    <div id="loginDiv">
+      <h3>Please login to your account</h3>
+      <br><br>
+      <input type="email" placeholder="enter your email">
+      <br><br>
+      <input type="password" placeholder="enter your password">
+      <br><br>
+      <button class="btn btn-lg btn-primary">Login</button>
+      <br><br>
+      <button class="btn btn-basic" onclick="showSignUp()">or click to create account</button>
+    </div>
+
+    <div id="signupDiv">
+      <h3>
+        <i class="bi bi-arrow-left" onclick="showLogin()"></i>
+        Create new account
+      </h3>
+      <br><br>
+      <input type="text" placeholder="enter your name">
+      <br><br>
+      <input type="email" placeholder="enter your email">
+      <br><br>
+      <input type="password" placeholder="enter your password">
+      <br><br>
+      <button class="btn btn-lg btn-primary">Signup</button>
+      <br><br>
+    </div>
+  </div>
+
+  <!-- End Options Div -->
 
 </body>
 </html>

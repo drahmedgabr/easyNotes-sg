@@ -1,7 +1,35 @@
 const noteInput = document.getElementById("noteInput");
 const notesDiv = document.getElementById("notesDiv");
 const zeroNotes = document.getElementById("zeroNotes");
+const optionsDiv = document.getElementById("optionsDiv");
+const loginDiv = document.getElementById("loginDiv");
+const signupDiv = document.getElementById("signupDiv");
+
 var notesArray = [];
+
+function showOptions() {
+    zeroNotes.style.display = "none";
+    notesDiv.style.display = "none";
+    optionsDiv.style.display = "flex";
+}
+
+function showHome() {
+    loginDiv.style.display = "block";
+    signupDiv.style.display = "none";
+    notesDiv.style.display = "block";
+    optionsDiv.style.display = "none";
+    showNotes();
+}
+
+function showSignUp() {
+    loginDiv.style.display = "none";
+    signupDiv.style.display = "block";
+}
+
+function showLogin() {
+    loginDiv.style.display = "block";
+    signupDiv.style.display = "none";  
+}
 
 
 function addNote() {

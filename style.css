@@ -126,3 +126,51 @@ textarea {
     color: red;
     font-size: 40px;
 }
+
+#optionsDiv {
+    height: 73vh;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#optionsDiv div {
+    width: 80%;
+    max-width: 450px;
+    text-align: center;
+    padding: 40px;
+    border: 3px solid var(--mainColor);
+    background-image: linear-gradient(white, rgba(0, 255, 255, 0.265));
+    border-radius: 20px;
+}
+
+#optionsDiv div input {
+    width: 80%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(16, 244, 244);
+    outline-color: var(--mainColor);
+}
+
+#optionsDiv div button {
+    width: 80%;
+}
+
+#optionsDiv #signupDiv {
+    display: none;
+}
+
+#optionsDiv i {
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+#optionsDiv i:hover {
+    cursor: pointer;
+    margin-right: 30px;
+}
