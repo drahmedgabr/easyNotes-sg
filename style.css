@@ -174,3 +174,27 @@ textarea {
     cursor: pointer;
     margin-right: 30px;
 }
+
+#optionsDiv #errorText {
+    font-size: 22px;
+    color: red;
+    margin-bottom: 10px;
+    display: none;
+}
+
+#userDiv {
+    height: 73vh;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#userDiv div {
+    width: 80%;
+    max-width: 450px;
+    text-align: center;
+    padding: 40px;
+    border: 3px solid var(--mainColor);
+    background-image: linear-gradient(white, rgba(0, 255, 255, 0.265));
+    border-radius: 20px;
+}

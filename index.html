@@ -77,11 +77,12 @@
     <div id="loginDiv">
       <h3>Please login to your account</h3>
       <br><br>
-      <input type="email" placeholder="enter your email">
+      <p id="errorText">Login Failed, please check your email or password</p>
+      <input type="email" placeholder="enter your email" id="loginEmail">
       <br><br>
-      <input type="password" placeholder="enter your password">
+      <input type="password" placeholder="enter your password" id="loginPassword">
       <br><br>
-      <button class="btn btn-lg btn-primary">Login</button>
+      <button class="btn btn-lg btn-primary" onclick="loginUser()">Login</button>
       <br><br>
       <button class="btn btn-basic" onclick="showSignUp()">or click to create account</button>
     </div>
@@ -104,6 +105,22 @@
   </div>
 
   <!-- End Options Div -->
+
+  <!-- Start User Div -->
+
+  <div id="userDiv">
+    <div>
+      <h3></h3>
+      <br>
+      <button class="btn btn-lg btn-primary">Download Notes</button>
+      <br><br>
+      <button class="btn btn-lg btn-success">Upload Notes</button>
+      <br><br>
+      <button class="btn btn-lg btn-danger">Sign Out</button>
+    </div>
+  </div>
+
+  <!-- End User Div -->
 
 </body>
 </html>

@@ -4,6 +4,13 @@ const zeroNotes = document.getElementById("zeroNotes");
 const optionsDiv = document.getElementById("optionsDiv");
 const loginDiv = document.getElementById("loginDiv");
 const signupDiv = document.getElementById("signupDiv");
+const loginEmail = document.getElementById("loginEmail");
+const loginPassword = document.getElementById("loginPassword");
+const errorText = document.getElementById("errorText");
+const userDiv = document.getElementById("userDiv");
+
+
+
 
 var notesArray = [];
 
@@ -100,3 +107,34 @@ function showNotes() {
 }
 
 showNotes();
+
+async function loginUser() {
+
+    if (loginEmail.value == "" || loginPassword.value == "") {
+        alert("please enter your email and password");
+    } else {
+        errorText.style.display = "none";
+
+        const apiUrl = `https://tatbeqak.site/apps/tatbeqey/apps/easynotes/login?email=${loginEmail.value}&password=${loginPassword.value}`;
+    
+        const response = await fetch(apiUrl);
+    
+        const data = await response.json();
+    
+        const status = data.status;
+    
+        if(status == true) {
+            const userName = data.name;
+            const userId = data.id;
+    
+            localStorage.setItem("userName", userName);
+            localStorage.setItem("userId", userId);
+
+            optionsDiv.style.display = "none";
+            userDiv.style.display = "flex";
+    
+        } else {
+            errorText.style.display = "block";
+        }
+    }
+}
