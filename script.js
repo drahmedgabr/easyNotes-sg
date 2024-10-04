@@ -15,9 +15,17 @@ const userDiv = document.getElementById("userDiv");
 var notesArray = [];
 
 function showOptions() {
+
+    const userName = localStorage.getItem("userName");
+
+    if(userName == null) {
+        optionsDiv.style.display = "flex";
+    } else {
+        userDiv.style.display = "flex";
+    }
+
     zeroNotes.style.display = "none";
-    notesDiv.style.display = "none";
-    optionsDiv.style.display = "flex";
+    notesDiv.style.display = "none"; 
 }
 
 function showHome() {
@@ -25,6 +33,7 @@ function showHome() {
     signupDiv.style.display = "none";
     notesDiv.style.display = "block";
     optionsDiv.style.display = "none";
+    userDiv.style.display = "none";
     showNotes();
 }
 
@@ -136,5 +145,61 @@ async function loginUser() {
         } else {
             errorText.style.display = "block";
         }
+    }
+}
+
+
+function signoutUser() {
+
+    if(confirm("are you sure to sign out?") == true){
+        localStorage.removeItem("userName");
+        localStorage.removeItem("userId");
+        showHome();
+    }
+}
+
+async function uploadNotes() {
+
+    const userId = localStorage.getItem("userId");
+    const userNotes = JSON.stringify(notesArray);
+
+    const apiUrl = `https://tatbeqak.site/apps/tatbeqey/apps/easynotes/addnote?id=${userId}&notes=${userNotes}`;
+
+    const response = await fetch(apiUrl);
+
+    const data = await response.json();
+
+    const status = data.status;
+
+    if(status == true){
+        alert("Notes uploaded susccessfully");
+    } else {
+        alert("Notes upload failed!");
+    }
+}
+
+async function downloadNotes() {
+    
+    const userId = localStorage.getItem("userId");
+
+    const apiUrl = `https://tatbeqak.site/apps/tatbeqey/apps/easynotes/getnotes?id=${userId}`;
+
+    const response = await fetch(apiUrl);
+
+    const data = await response.json();
+
+    const status = data.status;
+
+    if(status == true){
+
+        const downloadedNotes = data.notes;
+
+        notesArray = JSON.parse(downloadedNotes);
+
+        saveNotes();
+
+        alert("Notes downloaded susccessfully");
+    } else {
+        alert("Notes download failed!");
     }
 }
